@@ -1,0 +1,25 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+INF	.\1.cpp	/^const int INF = ~ ( 1 << ( sizeof( int ) * 8 - 1 ) );$/;"	v
+InitGraph	.\1.cpp	/^void InitGraph( void ) {$/;"	f	signature:( void )
+_edge	.\1.cpp	/^	_edge() {$/;"	f	struct:_edge	access:public	signature:()
+_edge	.\1.cpp	/^typedef struct _edge {$/;"	s	file:
+_edge::_edge	.\1.cpp	/^	_edge() {$/;"	f	struct:_edge	access:public	signature:()
+_edge::next	.\1.cpp	/^	_edge* next;$/;"	m	struct:_edge	file:	access:public
+_edge::vertex	.\1.cpp	/^	int vertex;				\/\/ 可达节点$/;"	m	struct:_edge	file:	access:public
+_edge::weight	.\1.cpp	/^	int weight;				\/\/ 权重$/;"	m	struct:_edge	file:	access:public
+edge	.\1.cpp	/^} edge, * ptr_edge;$/;"	t	typeref:struct:_edge	file:
+graph	.\1.cpp	/^vector< ptr_edge > graph( t );$/;"	p	file:	signature:( t )
+k	.\1.cpp	/^const int k = 3;			\/\/ 每个阶段的可达节点数$/;"	v
+main	.\1.cpp	/^int main( int argc, const char *argv[] ) {$/;"	f	signature:( int argc, const char *argv[] )
+n	.\1.cpp	/^const int n = 2;			\/\/ n 个阶段$/;"	v
+next	.\1.cpp	/^	_edge* next;$/;"	m	struct:_edge	file:	access:public
+orginalGraph	.\1.cpp	/^int orginalGraph[ t ][ t ] = {$/;"	v
+ptr_edge	.\1.cpp	/^} edge, * ptr_edge;$/;"	t	typeref:struct:_edge	file:
+t	.\1.cpp	/^const int t = n * k + 2;	\/\/ 源节点和目标节点$/;"	v
+vertex	.\1.cpp	/^	int vertex;				\/\/ 可达节点$/;"	m	struct:_edge	file:	access:public
+weight	.\1.cpp	/^	int weight;				\/\/ 权重$/;"	m	struct:_edge	file:	access:public

@@ -1,0 +1,318 @@
+cscope 16 $HOME\Desktop\dp\muti-graph"               0000001782
+	@C:\Users\Sky\Desktop\dp\muti-graph\1.cpp
+
+1 
+	~<io°ªam
+>
+
+2 
+	~<ve˘‹
+>
+
+3 
+usög
+ 
+«me•a˚
+ 
+	g°d
+;
+
+5 c⁄° 
+	gINF
+ = ~ ( 1 << ( ( ) * 8 - 1 ) );
+
+8 c⁄° 
+	gn
+ = 2;
+
+9 c⁄° 
+	gk
+ = 3;
+
+10 c⁄° 
+	gt
+ = 
+n
+ * 
+k
+ + 2;
+
+12 
+	s_edge
+ {
+
+13 
+	mweight
+;
+
+14 
+	mvîãx
+;
+
+15 
+_edge
+* 
+	m√xt
+;
+
+17 
+_edge
+() {
+
+18 
+	mweight
+ = 
+vîãx
+ = 0;
+
+19 
+	m√xt
+ = 
+NULL
+;
+
+21 } 
+	tedge
+, * 
+	t±r_edge
+;
+
+23 
+	gve˘‹
+< 
+	g±r_edge
+ > 
+gøph
+–
+t
+ );
+
+37 
+	g‹göÆGøph
+[ 
+t
+ ][Å ] = {
+
+38 
+INF
+, 4, 2, 3, INF, INF, INF, INF,
+
+39 
+INF
+, INF, INF, INF, 7, 6, INF, INF,
+
+40 
+INF
+, INF, INF, INF, 5, INF, INF, INF,
+
+41 
+INF
+, INF, INF, INF, INF, INF, 2, INF,
+
+42 
+INF
+, INF, INF, INF, INF, INF, INF, 5,
+
+43 
+INF
+, INF, INF, INF, INF, INF, INF, 4,
+
+44 
+INF
+, INF, INF, INF, INF, INF, INF, 6,
+
+45 
+INF
+, INF, INF, INF, INF, INF, INF, INF,
+
+49 
+	$InôGøph
+( ) {
+
+51  
+ve˘‹
+< 
+±r_edge
+ >::
+ôî©‹
+ 
+ô
+ = 
+gøph
+.
+	`begö
+(); ià!gøph.
+	`íd
+(); ++it )
+
+52 *
+ô
+ = 
+√w
+ 
+	`edge
+();
+
+54  
+i
+ = 0; i < 
+t
+; ++i ) {
+
+55  
+j
+ = 0; j < 
+t
+; ++j ) {
+
+56 i‡–
+‹göÆGøph
+[ 
+i
+ ][ 
+j
+ ] !
+INF
+ ) {
+
+57 
+±r_edge
+ 
+√w_edge
+ = 
+√w
+ 
+	`edge
+();
+
+58 
+√w_edge
+->
+weight
+ = 
+‹göÆGøph
+[ 
+i
+ ][ 
+j
+ ];
+
+59 
+√w_edge
+->
+vîãx
+ = 
+j
+;
+
+61 
+±r_edge
+ 
+tmp
+ = 
+gøph
+[ 
+i
+ ];
+
+62  
+tmp
+->
+√xt
+ )Åmp =Åmp->next;
+
+64 
+tmp
+->
+√xt
+ = 
+√w_edge
+;
+
+68 
+	}
+}
+
+70 
+	$maö
+–
+¨gc
+, c⁄° *
+¨gv
+[] ) {
+
+71 
+curSège
+[ 
+k
+ ];
+
+72 
+	`mem£t
+–
+curSège
+, 
+INF
+, ( curStage ) );
+
+74  
+i
+ = 0; i < 
+k
+; ++i ) {
+
+75 
+ªÆ_v
+ = 1 + 
+i
+;
+
+76 
+curSège
+[ 
+i
+ ] = ( curSège[ i ] > 
+‹göÆGøph
+[ 0 ][ 
+ªÆ_v
+ ] ? orginalGraph[ 0 ][Ñeal_v ] : curStage[ i ] );
+
+79  
+i
+ = 0; i < 
+n
+; ++i ) {
+
+80  
+j
+ = 0; j < 
+k
+; ++j ) {
+
+81 
+ªÆ_v
+ = 
+j
+ + 1 + 
+i
+ * 
+k
+;
+
+84 i‡–
+curSège
+[ 
+j
+ ] )
+
+90 
+	}
+}
+
+	@
+1
+.
+0
+1
+41
+C:\Users\Sky\Desktop\dp\muti-graph\1.cpp

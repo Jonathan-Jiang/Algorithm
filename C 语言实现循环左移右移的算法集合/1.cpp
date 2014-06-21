@@ -1,7 +1,3 @@
-//
-// Ñ­»·ÓÒÒÆ¡¢×óÒÆÊµÏÖ
-//
-
 #include <iostream>
 using	namespace	std;
 

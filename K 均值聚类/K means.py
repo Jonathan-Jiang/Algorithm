@@ -16,12 +16,14 @@ def distance((x1, y1), (x2, y2)):
 
 def K_means(Q):
     global clusters, seeds
-    seeds = [(rand(50, 450), rand(50, 450)) for _ in xrange(k)]
+    min_x = min([q[0] for q in Q])
+    min_y = min([q[1] for q in Q])
+    max_x = max([q[0] for q in Q])
+    max_y = max([q[1] for q in Q])
+    seeds = [(rand(min_x, max_x), rand(min_y, max_y)) for _ in xrange(k)]
     while True:
         now_seeds = [None for _ in xrange(k)]
-        clusters = {}
-        for i in xrange(k):
-            clusters.setdefault(i, [])
+        clusters = [[] for _ in xrange(k)]
 
         for q in Q:
             dist = []
@@ -65,7 +67,7 @@ def drawSeeds():
 
 def drawCluster():
     deep = 0
-    for points in clusters.values():
+    for points in clusters:
         if len(points) == 0:
             continue
         draw_color = pygame.Color(deep, 0, 0)
@@ -118,6 +120,8 @@ while running:
                     if q in seeds:
                         print 'fuck'
                 print '============='
+                if k == len(seeds):
+                    print 'best!'
                 print 'k', k
                 print 'Q', Q
                 print 'seeds', seeds

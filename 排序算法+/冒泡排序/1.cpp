@@ -32,7 +32,7 @@ bubble_sort(RandomAccessIterator begin, RandomAccessIterator end) {
 	bubble_sort(begin, end, less<int>());
 }
 
-int main(int argc, char *const argv[]) {
+int main(int argc, char* const argv[]) {
     int array[SIZE] = {
         9, 6, 8, 0, 4, 2, 3, 1, 5, 7
     };

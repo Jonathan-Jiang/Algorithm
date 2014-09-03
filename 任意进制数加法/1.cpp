@@ -17,7 +17,7 @@ int convert(int n[], int len, char cn[], int jinzhi) {
 	return 0;
 }
 
-int main(int argc, char *const argv[]) {
+int main(int argc, char* const argv[]) {
     int jinzhi, i = 0, max;
     while (cin >> jinzhi >> cn1 >> cn2) {
 		if (jinzhi < 2 || jinzhi > 35) {

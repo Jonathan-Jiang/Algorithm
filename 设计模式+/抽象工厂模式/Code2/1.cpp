@@ -62,12 +62,12 @@ enum COMPANY { intel, amd };
 
 class SuperFactory {
     public:
-		SuperFactory( COMPANY company ) : _company( company ) {
+		SuperFactory(COMPANY company) : _company(company) {
 		}
 
-        SingleCore* createSingleCore( ) {
+        SingleCore* createSingleCore() {
 			SingleCore* ret_single_core = NULL;
-			switch ( _company ) {
+			switch (_company) {
 			case intel:
 				ret_single_core = new IntelSingleCore();
 				break;
@@ -80,7 +80,7 @@ class SuperFactory {
 
         DualCore* createDualCore() {
 			DualCore* ret_dual_core = NULL;
-			switch ( _company ) {
+			switch (_company) {
 			case intel:
 				ret_dual_core = new IntelDualCore();
 				break;
@@ -95,14 +95,14 @@ class SuperFactory {
 };
 
 int
-main( void ) {
-	SuperFactory* factory = new SuperFactory( intel );
+main(void) {
+	SuperFactory* factory = new SuperFactory(intel);
 
     SingleCore* intel_single_core = factory->createSingleCore();
     DualCore* intel_dual_core = factory->createDualCore();
 
-    ( intel_single_core->get() )->putsInfo();
-    ( intel_dual_core->get() )->putsInfo();
+    (intel_single_core->get())->putsInfo();
+    (intel_dual_core->get())->putsInfo();
 
     return 0;
 }

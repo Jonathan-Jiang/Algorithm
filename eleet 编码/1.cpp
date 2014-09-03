@@ -24,15 +24,15 @@ const char dest[] = {
 	'Y', 'Z'
 };
 
-int get_cursor( int argc, char ch ) {
+int get_cursor(int argc, char ch) {
 	int flag = -1;
-	if ( argc == 2 ) {
-		for ( int i = 0; i < ( int ) strlen( source ); ++i ) if ( source[ i ] == ch ) {
+	if (argc == 2) {
+		for (int i = 0; i < (int) strlen(source); ++i) if (source[i] == ch) {
 			flag = i;
 			break;
 		}
-	} else if ( argc == 3 ) {
-		for ( int i = 0; i < ( int ) strlen( dest ); ++i ) if ( dest[ i ] == ch ) {
+	} else if (argc == 3) {
+		for (int i = 0; i < (int) strlen(dest); ++i) if (dest[i] == ch) {
 			flag = i;
 			break;
 		}
@@ -40,45 +40,45 @@ int get_cursor( int argc, char ch ) {
 	return flag;
 }
 
-int main( int argc, char* argv[] ) {
-	if ( argc != 2 && argc != 3 ) {
-		printf( "format error\n" );
-		exit( 0 );
+int main(int argc, char* argv[]) {
+	if (argc != 2 && argc != 3) {
+		printf("format error\n");
+		exit(0);
 	}
 
-	FILE* fp = fopen( "eleet.txt", "a+" );
+	FILE* fp = fopen("eleet.txt", "a+");
 
-	if ( argc == 2 ) {
-		int length = strlen( argv[ 1 ] );
-		char* param = ( char* ) malloc( length * sizeof( char ) );
-		strcpy( param, argv[ 1 ] );
+	if (argc == 2) {
+		int length = strlen(argv[1]);
+		char* param = (char*) malloc(length * sizeof(char));
+		strcpy(param, argv[1]);
 
-		for ( int i = 0; i < length; ++i ) {
-			int cursor = get_cursor( argc, param[ i ] );
-			if ( cursor != -1 ) { 
-				param[ i ] = dest[ cursor ];
+		for (int i = 0; i < length; ++i) {
+			int cursor = get_cursor(argc, param[i]);
+			if (cursor != -1) { 
+				param[i] = dest[cursor];
 			}
 		}
 
-		printf( "%s\n", param );
-		fprintf( fp, "%s\n", param );
-	} else if ( argc == 3 ) {
-		int length = strlen( argv[ 2 ] );
-		char* param = ( char* ) malloc( length * sizeof( char ) );
-		strcpy( param, argv[ 2 ] );
+		printf("%s\n", param);
+		fprintf(fp, "%s\n", param);
+	} else if (argc == 3) {
+		int length = strlen(argv[2]);
+		char* param = (char*) malloc(length * sizeof(char));
+		strcpy(param, argv[2]);
 
-		for ( int i = 0; i < length; ++i ) {
-			int cursor = get_cursor( argc, param[ i ] );
-			if ( cursor != -1 ) { 
-				param[ i ] = source[ cursor ];
+		for (int i = 0; i < length; ++i) {
+			int cursor = get_cursor(argc, param[i]);
+			if (cursor != -1) { 
+				param[i] = source[cursor];
 			}
 		}
 
-		printf( "%s\n", param );
-		fprintf( fp, "%s\n", param );
+		printf("%s\n", param);
+		fprintf(fp, "%s\n", param);
 	}
 
-	fclose( fp );
+	fclose(fp);
 	
 	return 0;
 }

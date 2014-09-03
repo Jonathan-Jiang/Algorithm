@@ -8,7 +8,7 @@
 using	namespace	std;
 
 const int MAXSIZE = 3000;
-int result[ MAXSIZE ];
+int result[MAXSIZE];
 stack< int > output;
 
 int main() {
@@ -18,31 +18,31 @@ int main() {
 		cout << "n: ";
 		cin >> n;
 
-		memset( result, 0, sizeof( result ) );
-		result[ 0 ] = 1;
+		memset(result, 0, sizeof(result));
+		result[0] = 1;
 
 		int digits = 1;
 		int upper = 0;
-		for ( i = 2; i <= n; ++i ) {
-			for ( j = 0; j < MAXSIZE; ++j ) {
-				int temp = result[ j ] * i + upper;
+		for (i = 2; i <= n; ++i) {
+			for (j = 0; j < MAXSIZE; ++j) {
+				int temp = result[j] * i + upper;
 				digits = temp % 10;
 				upper = temp / 10;
-				result[ j ] = digits;
+				result[j] = digits;
 			}
 		}
 
-		for ( i = MAXSIZE - 1; i >= 0; --i ) {
-			if ( result[ i ] != 0 ) {
+		for (i = MAXSIZE - 1; i >= 0; --i) {
+			if (result[i] != 0) {
 				break;
 			}
 		}
 
-		for ( j = 0; j <= i; ++j ) {
-			output.push( result[ j ] );
+		for (j = 0; j <= i; ++j) {
+			output.push(result[j]);
 		}
 
-		while ( ! output.empty() ) {
+		while (! output.empty()) {
 			cout << output.top();
 			output.pop();
 		}

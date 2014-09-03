@@ -37,7 +37,7 @@ class ConcreteClassB : public AbstractClass {
 };
 
 int
-main( void ) {
+main(void) {
     AbstractClass* ins_abstract_class = NULL;
     ins_abstract_class = new ConcreteClassA();
     ins_abstract_class->templateMethod();

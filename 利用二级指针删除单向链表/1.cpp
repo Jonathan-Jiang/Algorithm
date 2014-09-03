@@ -46,7 +46,7 @@ node *remove_if(node **head, remove_fn rm) {
 }
 
 
-int main(int argc, char *const argv[]) {
+int main(int argc, char* const argv[]) {
 	build_link();
 
     node *tmp;

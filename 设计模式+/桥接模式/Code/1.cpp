@@ -34,10 +34,10 @@ class ConcreteImplementorB : public Implementor {
 // 比如不同类型的平台，android、ios
 class Abstraction {
     public:
-		Abstraction( string type ) : _type( type ) {}
+		Abstraction(string type) : _type(type) {}
 
-        void addImplementor( Implementor* implementor ) {
-            this->implementor.push_back( implementor );
+        void addImplementor(Implementor* implementor) {
+            this->implementor.push_back(implementor);
         }
 
         virtual void operation() = 0;
@@ -48,29 +48,29 @@ class Abstraction {
 
 class RefinedAbstraction : public Abstraction {
     public:
-        RefinedAbstraction( string type ) : Abstraction( type ) {}
+        RefinedAbstraction(string type) : Abstraction(type) {}
 
         void operation() {
             cout << "now on " << _type << endl;
-            for ( list< Implementor* >::iterator it = implementor.begin(); it != implementor.end(); ++it ) {
-                ( *it )->operation();
+            for (list< Implementor* >::iterator it = implementor.begin(); it != implementor.end(); ++it) {
+                (*it)->operation();
             }
         }
 };
 
 int
-main( void ) {
-    Abstraction* android = new RefinedAbstraction( "android" );
-    Abstraction* ios = new RefinedAbstraction( "ios" );
+main(void) {
+    Abstraction* android = new RefinedAbstraction("android");
+    Abstraction* ios = new RefinedAbstraction("ios");
 
     Implementor* i_reader = new ConcreteImplementorA();
     Implementor* camera = new ConcreteImplementorB();
 
-    android->addImplementor( i_reader );
-    android->addImplementor( camera );
+    android->addImplementor(i_reader);
+    android->addImplementor(camera);
 
-    ios->addImplementor( i_reader );
-    ios->addImplementor( camera );
+    ios->addImplementor(i_reader);
+    ios->addImplementor(camera);
 
     android->operation();
     ios->operation();

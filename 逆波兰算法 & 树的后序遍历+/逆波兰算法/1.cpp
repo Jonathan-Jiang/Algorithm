@@ -102,7 +102,7 @@ void print(Node *ve) {
     else cout << ve->data << " ";
 }
 
-int main(int argc, char *const argv[]) {
+int main(int argc, char* const argv[]) {
     char formula[] = "3+(2-5)*6/3";
     vector<Node*> ve;
 

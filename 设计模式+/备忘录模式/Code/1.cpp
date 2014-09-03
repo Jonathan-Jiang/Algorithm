@@ -4,7 +4,7 @@ using    namespace    std;
 
 class Memento {
     public:
-        Memento( string state ) : _state( state ) {}
+        Memento(string state) : _state(state) {}
 
         string getState() {
             return this->_state;
@@ -19,10 +19,10 @@ class Originator {
         string state;
 
         Memento* createMemento() {
-            return new Memento( state );
+            return new Memento(state);
         }
 
-        void setMemento( Memento* memento ) {
+        void setMemento(Memento* memento) {
             state = memento->getState();
         }
 
@@ -37,7 +37,7 @@ class CareTaker {
 };
 
 int
-main( void ) {
+main(void) {
     Originator* o = new Originator();
     o->state = "On";
     o->show();
@@ -48,7 +48,7 @@ main( void ) {
     o->state = "off";
     o->show();
 
-    o->setMemento( c->memento );
+    o->setMemento(c->memento);
     o->show();
 
     return 0;

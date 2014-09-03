@@ -3,18 +3,18 @@
 #include <list>
 using	namespace	std;
 
-typedef void ( *update )();
+typedef void (*update)();
 
 template < typename FUNC_TYPE >
 class Delegate {
 	public:
-		void add( FUNC_TYPE update_func ) {
-			func_list.push_back( update_func );
+		void add(FUNC_TYPE update_func) {
+			func_list.push_back(update_func);
 		}
 
 		void operator ()() {
-			for ( list< FUNC_TYPE >::iterator it = func_list.begin(); it != func_list.end(); ++it ) {
-				( *it )();
+			for (list< FUNC_TYPE >::iterator it = func_list.begin(); it != func_list.end(); ++it) {
+				(*it)();
 			}
 		}
 
@@ -52,7 +52,7 @@ class Secretary : public Subject {
 
 class StockObserver {
 	public:
-		StockObserver( Subject* subject, string name ) {
+		StockObserver(Subject* subject, string name) {
 			this->subject = subject;
 			this->name = name;
 		}
@@ -67,7 +67,7 @@ class StockObserver {
 
 class NBAObserver {
 	public:
-		NBAObserver( Subject* subject, string name ) {
+		NBAObserver(Subject* subject, string name) {
 			this->subject = subject;
 			this->name = name;
 		}
@@ -81,14 +81,14 @@ class NBAObserver {
 };
 
 int
-main( void ) {
+main(void) {
 	Boss< update >* huhansan = new Boss< update >();
 
-	StockObserver* tongshi1 = new StockObserver( huhansan, "arthur"  );
-	NBAObserver* tongshi2 = new NBAObserver( huhansan, "daishengdong" );
+	StockObserver* tongshi1 = new StockObserver(huhansan, "arthur");
+	NBAObserver* tongshi2 = new NBAObserver(huhansan, "daishengdong");
 
-	huhansan->update_delegate.add( StockObserver::closeStockMarket );
-	huhansan->update_delegate.add( NBAObserver::closeNBADirectSeeding );
+	huhansan->update_delegate.add(StockObserver::closeStockMarket);
+	huhansan->update_delegate.add(NBAObserver::closeNBADirectSeeding);
 
 	huhansan->subjectState = "I'm back";
 

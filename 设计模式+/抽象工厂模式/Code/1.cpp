@@ -86,7 +86,7 @@ class AMDFactory : public Factory {
 };
 
 int
-main( void ) {
+main(void) {
     Factory* intel_factory = new IntelFactory();
     Factory* amd_factory = new AMDFactory();
 
@@ -96,10 +96,10 @@ main( void ) {
     SingleCore* amd_single_core = amd_factory->createSingleCore();
     DualCore* amd_dual_core = amd_factory->createDualCore();
 
-    ( intel_single_core->get() )->putsInfo();
-    ( intel_dual_core->get() )->putsInfo();
-    ( amd_single_core->get() )->putsInfo();
-    ( amd_dual_core->get() )->putsInfo();
+    (intel_single_core->get())->putsInfo();
+    (intel_dual_core->get())->putsInfo();
+    (amd_single_core->get())->putsInfo();
+    (amd_dual_core->get())->putsInfo();
 
     return 0;
 }

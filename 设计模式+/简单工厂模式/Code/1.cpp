@@ -15,11 +15,11 @@ class Operation {
             return _numberB;
         }
 
-        void setNumberA( double numberA ) {
+        void setNumberA(double numberA) {
             _numberA = numberA;
         }
 
-        void setNumberB( double numberB ) {
+        void setNumberB(double numberB) {
             _numberB = numberB;
         }
 
@@ -59,9 +59,9 @@ class OperationDiv : public Operation {
 
 class OperationFactory {
     public:
-        static Operation* createOperation( enum optType type ) {
+        static Operation* createOperation(enum optType type) {
             Operation* ins_operation = NULL;
-            switch ( type ) {
+            switch (type) {
                 case ADD:
                     ins_operation = new OperationAdd();
                     break;
@@ -80,10 +80,10 @@ class OperationFactory {
 };
 
 int
-main( void ) {
-    Operation* ins_operation = OperationFactory::createOperation( ADD );
-    ins_operation->setNumberA( 1 );
-    ins_operation->setNumberB( 2 );
+main(void) {
+    Operation* ins_operation = OperationFactory::createOperation(ADD);
+    ins_operation->setNumberA(1);
+    ins_operation->setNumberB(2);
     cout << ins_operation->GetResult() << endl;
 
 	return 0;

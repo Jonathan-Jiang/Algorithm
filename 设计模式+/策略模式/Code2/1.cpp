@@ -39,7 +39,7 @@ class Context {
 };
 
 int
-main( void ) {
+main(void) {
     Context< ConcreteStrategyA >* ins_contextA = new Context< ConcreteStrategyA >();
     ins_contextA->ContextInterface();
 

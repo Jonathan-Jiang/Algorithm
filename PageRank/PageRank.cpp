@@ -2,7 +2,7 @@
 #include <iostream>
 #include <algorithm>
 
-extern bool cmpPageRank( Node* a, Node* b );
+extern bool cmpPageRank(Node* a, Node* b);
 
 PageRank::PageRank(double q) : q_(q)
 {
@@ -30,7 +30,7 @@ void PageRank::Calc(vector<Node*> & nodes, int n)
 void PageRank::PrintPageRank(vector<Node*> & nodes)
 {
     double total_pr = 0;
-	sort( nodes.begin(), nodes.end(), cmpPageRank );
+	sort(nodes.begin(), nodes.end(), cmpPageRank);
     vector<Node*>::const_iterator citr = nodes.begin();
     for (; citr!=nodes.end(); ++citr) 
     {

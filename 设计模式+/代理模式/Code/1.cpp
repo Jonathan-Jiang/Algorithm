@@ -21,7 +21,7 @@ class Proxy : public Subject {
 		}
 
         void Request() {
-            if ( _real_subject == NULL ) {
+            if (_real_subject == NULL) {
                 _real_subject = new RealSubject();
             }
             _real_subject->Request();
@@ -31,7 +31,7 @@ class Proxy : public Subject {
 };
 
 int
-main( void ) {
+main(void) {
     Proxy* ins_proxy = new Proxy();
     ins_proxy->Request();
 

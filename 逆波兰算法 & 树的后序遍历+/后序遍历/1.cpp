@@ -93,7 +93,7 @@ void getList2(vector<TreeNode*> &list1, vector<int> &list2) {
 }
 
 
-int main(int argc, char *const argv[]) {
+int main(int argc, char* const argv[]) {
     vector<TreeNode*> list1_1;
 	vector<TreeNode*> list1_2;
     TreeNode *root = constrcutTree();

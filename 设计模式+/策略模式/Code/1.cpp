@@ -29,7 +29,7 @@ class ConcreteStrategyC : public Strategy {
 
 class Context {
     public:
-        Context( Strategy* ins_strategy ) {
+        Context(Strategy* ins_strategy) {
             _ins_strategy = ins_strategy;
         }
 
@@ -42,15 +42,15 @@ class Context {
 };
 
 int
-main( void ) {
+main(void) {
     Context* ins_context = NULL;
-    ins_context = new Context( new ConcreteStrategyA() );
+    ins_context = new Context(new ConcreteStrategyA());
     ins_context->ContextInterface();
 
-    ins_context = new Context( new ConcreteStrategyB() );
+    ins_context = new Context(new ConcreteStrategyB());
     ins_context->ContextInterface();
 
-    ins_context = new Context( new ConcreteStrategyC() );
+    ins_context = new Context(new ConcreteStrategyC());
     ins_context->ContextInterface();
 
 	return 0;

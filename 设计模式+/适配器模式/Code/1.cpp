@@ -25,7 +25,7 @@ private:
 };
 
 int
-main( void ) {
+main(void) {
 	MingwAdapter ma;
 	ma.ls();
 

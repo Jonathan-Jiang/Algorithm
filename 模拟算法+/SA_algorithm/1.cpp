@@ -4,7 +4,7 @@
 #include <time.h>
 using	namespace	std;
 
-const int INF = ~ ( 1 << ( sizeof( int ) * 8 - 1 ) );
+const int INF = ~ (1 << (sizeof(int) * 8 - 1));
 
 const double e = 2.718281828;
 const double r = 0.9;
@@ -15,7 +15,7 @@ typedef struct point {
     int y;
 } city;
 
-const city citys[ N ] = {
+const city citys[N] = {
     { 13.04, 23.12 }, { 36.39, 13.15 }, { 41.77, 22.44 }, { 37.12, 13.99 },
 	{ 34.88, 15.35 }, { 33.26, 15.56 }, { 32.38, 12.29 }, { 41.96, 10.04 },
 	{ 43.12, 79.0  }, { 43.86, 5.70  }, { 30.07, 19.70 }, { 25.62, 17.56 },
@@ -27,36 +27,36 @@ const city citys[ N ] = {
 };
 
 int
-main( void ) {
-	int path[ N ];
-	for ( int i = 0; i < N; ++i ) {
-		path[ i ] = i;
+main(void) {
+	int path[N];
+	for (int i = 0; i < N; ++i) {
+		path[i] = i;
 	}
 
 	double T = 100.0;
 	double T_min = 0;
 	double lastL = INF;
 	double L = 0.0;
-	srand( ( unsigned )time( NULL ) );
+	srand((unsigned)time(NULL));
 	do {
-		for ( int i = 0; i < N - 1; ++i ) {
-			double d = sqrt( pow( ( citys[ path[ i ] ].x - citys[ path[ i + 1 ] ].x ), 2 ) + pow( ( citys[ path[ i ] ].y - citys[ path[ i + 1 ] ].y ), 2 ) );
+		for (int i = 0; i < N - 1; ++i) {
+			double d = sqrt(pow((citys[path[i]].x - citys[path[i + 1]].x), 2) + pow((citys[path[i]].y - citys[path[i + 1]].y), 2));
 			L += d;
 		}
-		L += sqrt( pow( ( citys[ path[ N - 1 ] ].x - citys[ path[ 0 ] ].x ), 2 ) + pow( ( citys[ path[ N - 1 ] ].y - citys[ path[ 0 ] ].y ), 2 ) );
+		L += sqrt(pow((citys[path[N - 1]].x - citys[path[0]].x), 2) + pow((citys[path[N - 1]].y - citys[path[0]].y), 2));
 
 		double dE = lastL - L;
-		if ( dE >= 0 ) {
+		if (dE >= 0) {
 			lastL = L;
 		} else {
 			double p = rand() % 101;
 			p /= 100;
-			if ( pow( e, dE / T ) >= p ) {
+			if (pow(e, dE / T) >= p) {
 				lastL = L;
 			}
 		}
 		T *= r;
-	} while ( next_permutation( path, path + 4 ) && ( T - T_min ) > 0 );
+	} while (next_permutation(path, path + 4) && (T - T_min) > 0);
 
 	cout << lastL << endl;
 

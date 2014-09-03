@@ -48,7 +48,7 @@ class Facade {
 };
 
 int
-main( void ) {
+main(void) {
     Facade* ins_facade = new Facade();
     ins_facade->methodA();
     ins_facade->methodB();

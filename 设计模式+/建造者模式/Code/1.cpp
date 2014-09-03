@@ -5,12 +5,12 @@ using	namespace	std;
 
 class Product {
     public:
-        void add( string part ) {
-            parts.push_back( part );
+        void add(string part) {
+            parts.push_back(part);
         }
         
         void show() {
-            for ( vector< string >::iterator it = parts.begin(); it != parts.end(); ++it ) {
+            for (vector< string >::iterator it = parts.begin(); it != parts.end(); ++it) {
                 cout << *it << endl;
             }
         }
@@ -28,11 +28,11 @@ class Builder {
 class ConcreteBuilder1 : public Builder {
     public:
         void buildPartA() {
-            ins_product.add( "part a" );
+            ins_product.add("part a");
         }
 
         void buildPartB() {
-            ins_product.add( "part b" );
+            ins_product.add("part b");
         }
 
         Product getResult() {
@@ -45,11 +45,11 @@ class ConcreteBuilder1 : public Builder {
 class ConcreteBuilder2 : public Builder {
     public:
         void buildPartA() {
-            ins_product.add( "part x" );
+            ins_product.add("part x");
         }
 
         void buildPartB() {
-            ins_product.add( "part y" );
+            ins_product.add("part y");
         }
 
         Product getResult() {
@@ -61,23 +61,23 @@ class ConcreteBuilder2 : public Builder {
 
 class Director {
     public:
-        void construct( Builder* builder ) {
+        void construct(Builder* builder) {
             builder->buildPartA();
             builder->buildPartB();
         }
 };
 
 int
-main( void ) {
+main(void) {
     Director ins_director;
     Builder* b1 = new ConcreteBuilder1();
     Builder* b2 = new ConcreteBuilder2();
 
-    ins_director.construct( b1 );
+    ins_director.construct(b1);
     Product p1 = b1->getResult();
     p1.show();
 
-    ins_director.construct( b2 );
+    ins_director.construct(b2);
     Product p2 = b2->getResult();
     p2.show();
 

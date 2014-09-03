@@ -19,15 +19,15 @@ F(2*n+1)=F(n+1)*F(n+1)+F(n)*F(n)
 F(2*n+2)=F(n+2)*F(n+1)+F(n+1)*F(n)=(F(n+2)+F(n))*F(n+1)=(F(n+1)+F(n)*2)*F(n+1)
 */
 
-unsigned fib_last4( unsigned num)
+unsigned fib_last4(unsigned num)
 {
-  if ( num == 0 ) return 0;
+  if (num == 0) return 0;
   const unsigned M=10000;
   unsigned ret=1,next=1,ret_=ret;
   unsigned flag=1, tt=num;
-  while ( tt >>= 1) flag <<= 1;
-  while ( flag >>= 1 ){
-    if ( num & flag ){
+  while (tt >>= 1) flag <<= 1;
+  while (flag >>= 1){
+    if (num & flag){
       ret_ = ret * ret + next * next;
       next = (ret + ret + next) * next;
     } else {
@@ -44,12 +44,12 @@ unsigned fib_last4( unsigned num)
 #include <iostream>
 using	namespace	std;
 
-int func( int num ) {
-    if ( 0 == num ) return 1;
+int func(int num) {
+    if (0 == num) return 1;
 
     int k = 0;
     int tmp = num;
-    while ( tmp >>= 1 ) k += 1;
+    while (tmp >>= 1) k += 1;
 
     int n = 1;
 	int last_fn = 1;
@@ -57,22 +57,22 @@ int func( int num ) {
 	int fn;
 	int fn1;
 
-    while ( n != num ) {
+    while (n != num) {
 		n = num >> k;
 		--k;
-		if ( n == 1 ) {
+		if (n == 1) {
 			fn = last_fn;
 			fn1 = last_fn1;
 			goto final;
 		}
 
-		if ( n & 1 ) {
+		if (n & 1) {
 			// is odd
 			fn = last_fn1 * last_fn1 + last_fn * last_fn;
-			fn1 = ( last_fn1 + 2 * last_fn ) * last_fn1;
+			fn1 = (last_fn1 + 2 * last_fn) * last_fn1;
 		} else {
 			// is even
-			fn = ( 2 * last_fn1 - last_fn ) * last_fn;
+			fn = (2 * last_fn1 - last_fn) * last_fn;
 			fn1 = last_fn1 * last_fn1 + last_fn * last_fn;
 		}
 
@@ -84,11 +84,11 @@ final:
 	return fn;
 }
 
-int main( int argc, const char *argv[] ) {
-	// for ( int i = 0; i < 10; ++i )
-		// cout << i << " : " << func( i ) << endl;
+int main(int argc, const char* argv[]) {
+	// for (int i = 0; i < 10; ++i)
+		// cout << i << " : " << func(i) << endl;
 
-	cout << func( 8 ) << endl;
+	cout << func(8) << endl;
 
 	return 0;
 }

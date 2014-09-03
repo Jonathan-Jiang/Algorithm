@@ -16,18 +16,18 @@ class Observer {
 
 class Subject {
     public:
-        void attach( Observer* observer ) {
-            observers.push_back( observer );
+        void attach(Observer* observer) {
+            observers.push_back(observer);
         }
 
-        void detach( Observer* observer ) {
+        void detach(Observer* observer) {
 			// in C++, this would not work
-            // observers.remove( observer );
+            // observers.remove(observer);
         }
 
         void notify() {
-            for ( list< Observer* >::iterator it = observers.begin(); it != observers.end(); ++it ) {
-				( *it )->update();
+            for (list< Observer* >::iterator it = observers.begin(); it != observers.end(); ++it) {
+				(*it)->update();
             }
         }
     private:
@@ -41,7 +41,7 @@ class ConcreteSubject : public Subject {
 
 class ConcreteObserver : public Observer {
 	public:
-		ConcreteObserver( ConcreteSubject* subject, string name ) {
+		ConcreteObserver(ConcreteSubject* subject, string name) {
 			this->subject = subject;
 			this->name = name;
 		}
@@ -57,12 +57,12 @@ class ConcreteObserver : public Observer {
 };
 
 int
-main( void ) {
+main(void) {
 	ConcreteSubject* s = new ConcreteSubject();
-	ConcreteObserver* ob1 = new ConcreteObserver( s, "arthur" );
-	ConcreteObserver* ob2 = new ConcreteObserver( s, "daishengdong" );
-	s->attach( ob1 );
-	s->attach( ob2 );
+	ConcreteObserver* ob1 = new ConcreteObserver(s, "arthur");
+	ConcreteObserver* ob2 = new ConcreteObserver(s, "daishengdong");
+	s->attach(ob1);
+	s->attach(ob2);
 
 	s->subjectState = "abc";
 	s->notify();

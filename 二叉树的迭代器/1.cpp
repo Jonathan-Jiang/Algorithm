@@ -70,7 +70,7 @@ func(Node *node) {
 }
 
 int
-main(int argc, char *const argv[]) {
+main(int argc, char* const argv[]) {
     Node *root = new Node(1);
     Node *node2 = new Node(2);
     Node *node3 = new Node(3);

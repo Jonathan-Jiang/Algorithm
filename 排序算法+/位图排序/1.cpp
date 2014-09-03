@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <memory.h>
 #define BYTESIZE 8  
-void SetBit(char *p, int posi)  
+void SetBit(char* p, int posi)  
 {  
 	for(int i=0; i < (posi/BYTESIZE); i++)  
 	{  
@@ -26,7 +26,7 @@ void BitMapSortDemo()
 	//待排序中的最大值是14，因此只需要2个Bytes(16个Bit)  
 	//就可以了。  
 	const int BufferLen = 2;  
-	char *pBuffer = new char[BufferLen];  
+	char* pBuffer = new char[BufferLen];  
   
 	//要将所有的Bit位置为0，否则结果不可预知。  
 	memset(pBuffer,0,BufferLen);  
@@ -37,7 +37,7 @@ void BitMapSortDemo()
 	}  
   
 	//输出排序结果  
-	for( i=0;i<BufferLen;i++)//每次处理一个字节(Byte)  
+	for(i=0;i<BufferLen;i++)//每次处理一个字节(Byte)  
 	{  
 		for(int j=0;j<BYTESIZE;j++)//处理该字节中的每个Bit位  
 		{  

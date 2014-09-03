@@ -7,7 +7,7 @@ class Person {
         Person() {
         }
 
-        Person( string name ) {
+        Person(string name) {
             _name = name;
         }
 
@@ -20,12 +20,12 @@ class Person {
 
 class Finery : public Person {
     public:
-        void Decorate( Person* component ) {
+        void Decorate(Person* component) {
             _component = component;
         }
 
         void show() {
-            if ( _component != NULL ) {
+            if (_component != NULL) {
                 _component->show();
             }
         }
@@ -83,16 +83,16 @@ class Suit: public Finery {
 };
 
 int
-main( void ) {
-    Person* ins_person = new Person( "arthur" );
+main(void) {
+    Person* ins_person = new Person("arthur");
     cout << "first decoration" << endl;
     Sneakers* pqx = new Sneakers();
     BigTrouser* kk = new BigTrouser();
     TShirts* dtx = new TShirts();
 
-    pqx->Decorate( ins_person );
-    kk->Decorate( pqx );
-    dtx->Decorate( kk );
+    pqx->Decorate(ins_person);
+    kk->Decorate(pqx);
+    dtx->Decorate(kk);
     dtx->show();
 
     cout << "second decoration" << endl;
@@ -100,9 +100,9 @@ main( void ) {
     Tie* ld = new Tie();
     Suit* xz = new Suit();
 
-    px->Decorate( ins_person );
-    ld->Decorate( px );
-    xz->Decorate( ld );
+    px->Decorate(ins_person);
+    ld->Decorate(px);
+    xz->Decorate(ld);
     xz->show();
 
 	return 0;

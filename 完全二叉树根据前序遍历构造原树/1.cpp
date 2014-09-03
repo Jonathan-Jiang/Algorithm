@@ -5,21 +5,21 @@
 #include <iostream>
 using	namespace	std;
 
-void func( string curSeq ) {
+void func(string curSeq) {
 	int length = curSeq.length();
-	char root = curSeq[ 0 ];
-	if ( length > 1 ) {
-		string sub1 = curSeq.substr( 1, length / 2 );
-		string sub2 = curSeq.substr( length / 2 + 1, length - 1 );
-		func( sub1 );
-		func( sub2 );
+	char root = curSeq[0];
+	if (length > 1) {
+		string sub1 = curSeq.substr(1, length / 2);
+		string sub2 = curSeq.substr(length / 2 + 1, length - 1);
+		func(sub1);
+		func(sub2);
 	}
 	cout << root;
 }
 
 int main() {
 	string pre = "1256378";
-	func( pre );
+	func(pre);
 
 	return 0;
 }

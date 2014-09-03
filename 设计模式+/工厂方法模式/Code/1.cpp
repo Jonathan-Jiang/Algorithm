@@ -11,11 +11,11 @@ class Operation {
             return _numberB;
         }
 
-        void setNumberA( double numberA ) {
+        void setNumberA(double numberA) {
             _numberA = numberA;
         }
 
-        void setNumberB( double numberB ) {
+        void setNumberB(double numberB) {
             _numberB = numberB;
         }
 
@@ -87,11 +87,11 @@ class DivFactory: public Factory {
 };
 
 int
-main( void ) {
+main(void) {
     Factory* ins_factory = new AddFactory();
     Operation* ins_operation = ins_factory->createOperation();
-    ins_operation->setNumberA( 1 );
-    ins_operation->setNumberB( 2 );
+    ins_operation->setNumberA(1);
+    ins_operation->setNumberB(2);
     cout << ins_operation->GetResult() << endl;
 
 	return 0;

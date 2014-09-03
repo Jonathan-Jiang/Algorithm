@@ -5,9 +5,9 @@ using    namespace    std;
 #define SIZE        256
 #define MAX(x, y)   (x) > (y) ? (x) : (y)
 
-void boyer_moore(char* pattern, int m, char* text, int n );
+void boyer_moore(char* pattern, int m, char* text, int n);
 
-int main(int argc, char *const argv[]) {
+int main(int argc, char* const argv[]) {
     char text[MAX_CHAR], pattern[MAX_CHAR];
 
     while (true) {

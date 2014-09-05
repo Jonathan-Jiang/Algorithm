@@ -92,7 +92,7 @@ int test(program p, int a, int b) {
     else return 1;
 }
 
-void dfs(pair<int, int> p[], int n) {
+void bfs(pair<int, int> p[], int n) {
     queue<program> q;
     program root(DUP);
     q.push(root);
@@ -128,7 +128,7 @@ int main() {
 
     while (cin >> a >> b)
         p[n++] = pair<int, int>(a, b);
-    dfs(p, n);
+    bfs(p, n);
 
     return 0;
 }

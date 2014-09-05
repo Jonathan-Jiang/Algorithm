@@ -160,10 +160,16 @@ int main() {
     answer* ans;
     int a, b;
     cin >> a >> b;
+    if (a == 1) {
+        cout << a << "/" << b << " = " << a << "/" << b << endl;
+        return 0;
+    }
+	int p_a = a / gcd(a, b);
+	int p_b = b / gcd(a, b);
     // 迭代加深搜索
     for (int d = 1;; ++d)
         // 枚举搜索的深度 d
-        if (!dfs(d, a, b, &ans)) {
+        if (!dfs(d, p_a, p_b, &ans)) {
             cout << a << "/" << b << " = ";
             ans->print();
             break;

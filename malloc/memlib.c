@@ -1,4 +1,4 @@
-#include "mtype.h"
+#include "memlib.h"
 
 #define BLOCK_SIZE   20
 

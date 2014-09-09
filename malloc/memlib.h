@@ -1,5 +1,5 @@
-#ifndef MTYPE_H
-#define MTYPE_H
+#ifndef MEMLIB_H
+#define MEMLIB_H
 
 typedef struct s_block* m_block_ptr;
 struct m_block {

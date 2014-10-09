@@ -1,7 +1,7 @@
 #ifndef MEMLIB_H
 #define MEMLIB_H
 
-typedef struct s_block* m_block_ptr;
+typedef struct m_block* m_block_ptr;
 struct m_block {
     size_t size;    // size of this block
     m_block_ptr prev;   // pointer to previous block

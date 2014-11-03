@@ -1,0 +1,54 @@
+// 大数减大数
+// 大数a减去大数b，值赋给s
+void big_Minus_big(char a[], char b[], char s[])
+{
+	int m[1000], n[1000], p[1000];
+	// 初始化
+	memset(m, 0, sizeof(m));
+	memset(n, 0, sizeof(n));
+	memset(p, 0, sizeof(p));
+	int len_a = strlen(a);
+	int len_b = strlen(b);
+	// 如果a<b，则把a,b互换后再想减
+	if(len_a<len_b || strcmp(a, b) < 0)
+	{
+		char tmp[1000];
+		strcpy(tmp, a);
+		strcpy(a, b);
+		strcpy(b, tmp);
+		s[0]='-';
+	}
+	// 把a逆序赋给m整形数组
+	for(int i=0; i<len_a; ++i)
+		m[i] = a[len_a-i-1]-'0';
+	// 把b逆序赋给n整形数组
+	for(int i=0; i<len_b; ++i)
+		n[i] = b[len_b-i-1]-'0';
+	int len = len_a;
+	// 整体相减
+	for(int i=0; i<len; ++i)
+		p[i] = m[i]-n[i];
+	// 处理
+	for(int i=0; i<len; ++i)
+		if(p[i] < 0)
+		{
+			p[i+1] -= 1;
+			p[i] += 10;;
+		}
+	// 处理最高位
+	while(p[len]>0)
+		len--;
+	// 赋给char型数组s，注意负号'-'
+	if(s[0] == '-')
+	{
+		for(int i=1; i<=len; ++i)
+			s[i] = p[len-i]+'0';
+			s[len+1] = 0;
+	}
+	else
+	{
+		for(int i=0; i<len; ++i)
+			s[i] = p[len-i-1]+'0';
+			s[len] = 0;
+	}
+}

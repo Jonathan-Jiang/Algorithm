@@ -26,10 +26,20 @@ int get_num(int num, int new_num) {
     return 10 * num + new_num;
 }
 
+union Data {
+    int num;
+    char op;
+};
+
 struct Node {
-    Node(int p_data, bool p_is_op = false) : data(p_data), is_op(p_is_op), lchild(NULL), rchild(NULL) {}
+    Node(char p_op) : is_op(true), lchild(NULL), rchild(NULL) {
+		data.op = p_op;
+	}
+    Node(int p_num) : is_op(false), lchild(NULL), rchild(NULL) {
+		data.num = p_num;
+	}
     bool is_op;
-    int data;
+	Data data;
     Node *lchild, *rchild;
 };
 
@@ -48,14 +58,14 @@ void func(char formula[], vector<Node*> &ve) {
 
 		if (i == strlen(formula)) {
 			while (!op_st.empty()) {
-				ve.push_back(new Node(op_st.top(), true));
+				ve.push_back(new Node(op_st.top()));
 				op_st.pop();
 			}
 		}
 
         if (formula[i] == ')') {
             while (op_st.top() != '(') {
-                ve.push_back(new Node(op_st.top(), true));
+                ve.push_back(new Node(op_st.top()));
                 op_st.pop();
             }
             op_st.pop();
@@ -65,7 +75,7 @@ void func(char formula[], vector<Node*> &ve) {
             op_st.push(formula[i]);
         } else {
             while (!first_higher(formula[i], op_st.top())) {
-                ve.push_back(new Node(op_st.top(), true));
+                ve.push_back(new Node(op_st.top()));
                 op_st.pop();
             }
             op_st.push(formula[i]);
@@ -93,13 +103,35 @@ Node *build_tree(vector<Node*> &ve) {
 void post_order(Node *root) {
     if (root->lchild) post_order(root->lchild);
     if (root->rchild) post_order(root->rchild);
-    if (root->is_op) cout << (char)root->data << " ";
-    else cout << root->data << " ";
+    if (root->is_op) cout << root->data.op << " ";
+    else cout << root->data.num << " ";
 }
 
 void print(Node *ve) {
-    if (ve->is_op) cout << (char)ve->data << " ";
-    else cout << ve->data << " ";
+    if (ve->is_op) cout << ve->data.op << " ";
+    else cout << ve->data.num << " ";
+}
+
+int calculate(vector<Node*> &ve) {
+    stack<int> st;
+    for (vector<Node*>::iterator it = ve.begin(); it != ve.end(); ++it) {
+        if ((*it)->is_op) {
+            int num1 = st.top();
+            st.pop();
+            int num2 = st.top();
+            st.pop();
+            if ((*it)->data.op == '+') {
+                st.push(num2 + num1);
+            } else if ((*it)->data.op == '-') {
+                st.push(num2 - num1);
+            } else if ((*it)->data.op == '*') {
+                st.push(num2 * num1);
+            } else if ((*it)->data.op == '/') {
+                st.push(num2 / num1);
+            }
+        } else st.push((*it)->data.num);
+    }
+	return st.top();
 }
 
 int main(int argc, char* const argv[]) {
@@ -113,6 +145,8 @@ int main(int argc, char* const argv[]) {
 
     post_order(build_tree(ve));
     cout << endl;
+
+	cout << calculate(ve) << endl;
 
     return 0;
 }

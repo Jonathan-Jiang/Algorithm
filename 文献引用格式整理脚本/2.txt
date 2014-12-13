@@ -1,0 +1,40 @@
+[47] Kawakami K, Nakamura A, Ishigami A, Goto S,  Takahashi R. Age-related difference of site-specific histone modifications in rat liver[J]. Biogerontology, 2009, 10(4), 415-421.
+
+[48] Esteller M. Cancer epigenomics: DNA methylomes and histone-modification maps[J]. Nature Reviews Genetics, 2007, 8(4), 286-298.
+
+[49] Dalvai M,  Bystricky K. The role of histone modifications and variants in regulating gene expression in breast cancer[J]. Journal of mammary gland biology and neoplasia, 2010, 15(1), 19-33.
+
+[50] Lim P S, Hardy K, Bunting K L, Ma L, Peng K, Chen X,  Shannon M F. Defining the chromatin signature of inducible genes in T cells[J]. Genome biology, 2009, 10(10), R107.
+
+[51] Su J, Zhang Y, Lv J, Liu H, Tang X, Wang F,   Li X. CpG_MI: a novel approach for identifying functional CpG islands in mammalian genomes[J]. Nucleic acids research, 2009, gkp882.
+
+[52] Roh T Y, Cuddapah S, Cui K,  Zhao K. The genomic landscape of histone modifications in human T cells[J]. Proceedings of the National Academy of Sciences, 2006, 103(43), 15782-15787.
+
+[53] Weber M, Davies J J, Wittig D, Oakeley E J, Haase M, Lam W L,  Schuebeler D. Chromosome-wide and promoter-specific analyses identify sites of differential DNA methylation in normal and transformed human cells[J]. Nature genetics, 2005, 37(8), 853-862.
+
+[54] Miranda T B,  Jones P A. DNA methylation: the nuts and bolts of repression[J]. Journal of cellular physiology, 2007, 213(2), 384-390.
+
+[55] Watanabe Y, Numata K, Murata S, Osada Y, Saito R, Nakaoka H,   Kiyosawa H. Genome-wide analysis of expression modes and DNA methylation status at sense–antisense transcript loci in mouse[J]. Genomics, 2010, 96(6), 333-341.
+
+[56] Latham J A,  Dent S Y. Cross-regulation of histone modifications[J]. Nature structural & molecular biology, 2007, 14(11), 1017-1024.
+
+[57] Yu H, Zhu S, Zhou B, Xue H,  Han J D J. Inferring causal relationships among different histone modifications and gene expression[J]. Genome research, 2008, 18(8), 1314-1324.
+
+[58] Chernukhin I, Shamsuddin S, Kang S Y, Bergstr?m R, Kwon Y W, Yu W,   Klenova E. CTCF interacts with and recruits the largest subunit of RNA polymerase II to CTCF target sites genome-wide[J]. Molecular and cellular biology, 2007, 27(5), 1631-1648.
+
+[59] Karli? R, Chung H R, Lasserre J, Vlahovi?ek K,  Vingron M. Histone modification levels are predictive for gene expression[J]. Proceedings of the National Academy of Sciences, 2010, 107(7), 2926-2931.
+
+[60] Zhang Y, Lv J, Liu H, Zhu J, Su J, Wu Q,   Li X. HHMD: the human histone modification database[J]. Nucleic acids research, 2010, 38(suppl 1), D149-D154.
+
+[61] Chen L,  Zheng S. Studying alternative splicing regulatory networks through partial correlation analysis[J]. Genome Biol, 2009, 10(1), R3.
+
+[62] Reverter A,  Chan E K. Combining partial correlation and an information theory approach to the reversed engineering of gene co-expression networks[J]. Bioinformatics, 2008, 24(21), 2491-2497.
+
+[63] Schones D E, Cui K, Cuddapah S, Roh T Y, Barski A, Wang Z,   Zhao K. Dynamic regulation of nucleosome positioning in the human genome[J]. Cell, 2008, 132(5), 887-898.
+
+[64] Rakyan V K, Down T A, Thorne N P, Flicek P, Kulesha E, Gr?f S,   Beck S. An integrated resource for genome-wide identification and analysis of human tissue-specific differentially methylated regions (tDMRs)[J]. Genome research, 2008, 18(9), 1518-1529.
+
+[65] Sch?fer J,  Strimmer K. An empirical Bayes approach to inferring large-scale gene association networks[J]. Bioinformatics, 2005, 21(6), 754-764.
+
+[66] Okano M, Bell D W, Haber D A,  Li E. DNA methyltransferases Dnmt3a and Dnmt3b are essential for de novo methylation and mammalian development[J]. Cell, 1999, 99(3), 247-257.
+

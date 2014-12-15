@@ -1,6 +1,8 @@
-num = 46
+import re
+num = 0
 of = open('2.txt', 'w')
 for line in open('1.txt'):
+    line = line.strip()
     num += 1
     nameing = True
     titleing = False 
@@ -24,24 +26,12 @@ for line in open('1.txt'):
                 i += 1
                 is_in_name = not is_in_name
                 output += c
-                print '\n*1*\n'
-                print output
-                # raw_input()
             elif c == '(':
                 output = output[:len(output) - 1] + '.'
                 nameing = False
                 titleing = True
                 year = line[i + 1 : i + 5]
-                print '\n*2.1*\n'
-                print year
-                # raw_input()
-                print '\n*2.2*\n'
-                print output
-                # raw_input()
                 i = i + 7
-                print '\n*2.3*\n'
-                print line[i:]
-                # raw_input()
             else:
                 i += 1
                 output += c
@@ -52,9 +42,6 @@ for line in open('1.txt'):
                 output += '[J].'
                 titleing = False
                 journaling = True
-                print '\n*3*\n'
-                print output
-                # raw_input()
             else:
                 i += 1
                 output += c
@@ -64,15 +51,10 @@ for line in open('1.txt'):
                 i += 1
                 is_first = False
                 output += ', ' + year + c
-                print '\n*5*\n'
-                print output
-                # raw_input()
             else:
                 i += 1
                 output += c
-                print '\n*6*\n'
-                print output
-                # raw_input()
-    print output
+    p = re.compile(r'(\s)+')
+    output = p.sub(r' ', output)
     of.write(output + '\n')
 of.close()

@@ -3,13 +3,8 @@
 using    namespace    std;
 
 void Eratosthenes(bool prime_table[], int n) {
-    int *num = new int[n];
-    for (int i = 0; i < n; ++i) {
-        num[i] = i;
-    }
-
     prime_table[2] = true;
-    for (i = 2; i <= sqrt(n); ++i) {
+    for (int i = 2; i <= sqrt(n); ++i) {
         if (prime_table[i]) {
             for (int j = 2; j <= n / i; ++j) {
                 prime_table[i * j] = false;

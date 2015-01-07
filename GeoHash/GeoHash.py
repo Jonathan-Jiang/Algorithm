@@ -49,34 +49,34 @@ class GeoHash():
     def __init__(self, strategy_func):
         self.strategy_func = strategy_func
 
-    # 获取坐标 (x, y) 的相对坐标 (relative_x, relative_y)
-    def get_relative_coordinate(self, x, y):
+    # 获取坐标 (x, y) 的块坐标 (square_x, square_y)
+    def get_square_coordinate(self, x, y):
         return int((x + 180) / width_gap), int((y + 90) / height_gap)
 
     # 获取一个经纬度坐标 (x, y) 的 geohash 值
-    # 先获取该经纬度坐标值的相对坐标值
+    # 先获取该经纬度坐标值的块坐标值
     # 然后调用 geohash 函数来计算
-    # geohash 函数的参数是相对坐标值
+    # geohash 函数的参数是块坐标值
     def get_code_using_abstract_coordinate(self, x, y):
-        rx, ry = self.get_relative_coordinate(x, y)
+        rx, ry = self.get_square_coordinate(x, y)
         return geohash(rx, ry, self.strategy_func);
 
-    # 计算一个相对坐标的 geohash 值
-    # 使用相对坐标
-    def get_code_using_relative_coordinate(self, (rx, ry)):
+    # 计算一个块坐标的 geohash 值
+    # 使用块坐标
+    def get_code_using_square_coordinate(self, (rx, ry)):
         return geohash(rx, ry, self.strategy_func);
 
     # 获取一个经纬度坐标 (x, y) 的邻近点
     # 注意传入的参数是一个经纬度值，可以是浮点数
-    # geohash 函数传入的是一个相对坐标值
+    # geohash 函数传入的是一个块坐标值
     def get_adjacent_points(self, x, y):
-        # 获取当前经纬度坐标 (x, y) 的相对坐标 (rx, ry)
-        rx, ry = self.get_relative_coordinate(x, y)
-        # 获取以当前相对坐标为中心的周边 8 个坐标，和当前相对坐标本身共 9 个坐标
+        # 获取当前经纬度坐标 (x, y) 的块坐标 (rx, ry)
+        rx, ry = self.get_square_coordinate(x, y)
+        # 获取以当前块坐标为中心的周边 8 个坐标，和当前块坐标本身共 9 个坐标
         # 去除掉越界的情况
-        relative_coordinates = [(rx + i, ry + j) for i in range(-1, 2) for j in range(-1, 2) if rx + i >= 0 and rx + i < (1 << geohash_length) and ry + j >= 0 and ry + j < (1 << geohash_length)]
-        # 获取这 9 个相对坐标的 geohash 值
-        hash_codes = map(self.get_code_using_relative_coordinate, relative_coordinates)
+        square_coordinates = [(rx + i, ry + j) for i in range(-1, 2) for j in range(-1, 2) if rx + i >= 0 and rx + i < (1 << geohash_length) and ry + j >= 0 and ry + j < (1 << geohash_length)]
+        # 获取这 9 个块坐标的 geohash 值
+        hash_codes = map(self.get_code_using_square_coordinate, square_coordinates)
 
         adjacent_points = []
         for key in cache.keys():
@@ -104,7 +104,7 @@ longitude = (-180, 180)
 # 纬度取值范围
 latitude = (-90, 90)
 
-# 传入的参数是一个位置的相对坐标值
+# 传入的参数是一个位置的块坐标值
 # 返回它的 geohash 值
 # 采用策略设计模式，第三个参数是采用的填充曲线类型
 # 可以采用 Hilbert 或者 Peano 曲线
